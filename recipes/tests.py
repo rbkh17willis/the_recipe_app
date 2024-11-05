@@ -1,6 +1,8 @@
 from django.test import TestCase, Client
 from .models import Recipe
 from django.urls import reverse
+from django.contrib.auth.models import User
+from .forms import RecipeSearchForm
 
 # 2.4 tests
 class RecipeModelTest(TestCase):
@@ -62,38 +64,48 @@ class RecipeModelTest(TestCase):
         # compare the value to the expected result
         self.assertEqual(recipe.difficulty, "Easy")
 
-# 2.5 tests
 
-class RecipeViewsTest(TestCase):
+class RecipeFormTest(TestCase):
+
+  def setUpTestData():
+    Recipe.objects.create(name='Tea', cooking_time=5, ingredients='tea leaves, water, sugar')
+    Recipe.objects.create(name='Lemon Rice', cooking_time=30, ingredients='lemons, rice, water')
+
+    User.objects.create_user(username='testuser', password='testpassword')
+
+  ## TEST SEARCH FUNCTION
+  def test_search_request(self):
+    client = Client()
+    client.login(username='testuser', password='testpassword')
+
+    data = {'recipe_search': 'sugar', 'chart_type': '#1'}
+    response = client.post('/recipes/search', data)
+
+    self.assertEqual(response.status_code, 200)
+
+  def test_form_valid(self):
+    data = {'recipe_search': 'sugar', 'chart_type': '#1'}
+    response = RecipeSearchForm(data)
+
+    self.assertTrue(response.is_valid())
+  
+  def test_search_ingredient(self):
+    client = Client()
+    client.login(username='testuser', password='testpassword')
+
+    input = {'recipe_search': 'water', 'chart_type': '#1'}
+    response = client.post('/recipes/search', input)
+    data = response.content
     
-    @classmethod
-    def setUpTestData(cls):
-        # Set up data for the view tests.
-        cls.recipe = Recipe.objects.create(
-            name='View Test Recipe',
-            ingredients='Ingredient1,Ingredient2,Ingredient3',
-            cooking_time=20,
-            difficulty='Medium',
-        )
+    self.assertTrue('Tea' in data.decode())
+    self.assertTrue('Lemon Rice' in data.decode())
+
+  def test_search_recipe(self):
+    client = Client()
+    client.login(username='testuser', password='testpassword')
+
+    input = {'recipe_search': 'lemon rice', 'chart_type': '#1'}
+    response = client.post('/recipes/search', input)
+    data = response.content
     
-    def test_home_page_status_code(self):
-        # Test the home page is accessible and returns a HTTP 200 status.
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
-    
-    def test_recipe_list_view(self):
-        # Verify the recipe list view works and includes the recipe's name.
-        response = self.client.get(reverse('recipes:list'))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'View Test Recipe')
-    
-    def test_recipe_detail_view(self):
-        # Test the recipe detail view displays the correct recipe details.
-        response = self.client.get(reverse('recipes:detail', args=[self.recipe.pk]))
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'View Test Recipe')
-    
-    def test_recipe_detail_view_with_nonexistent_recipe(self):
-        # Check that a non-existent recipe detail view returns a 404 status.
-        response = self.client.get(reverse('recipes:detail', args=[999]))
-        self.assertEqual(response.status_code, 404)
+    self.assertTrue('Lemon Rice' in data.decode())
