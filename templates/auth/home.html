@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- LOGIN PAGE FOR RECIPE APP -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/home.css' %}">
+  <title>Recipe App</title>
+</head>
+
+<body>
+  <div class="model">
+    <span class="text">
+      <h1>recipe app</h1>
+      <form action="" method="POST">
+        {% comment %} add Django security token {% endcomment %}
+        {% csrf_token %}
+
+        {% comment %} print form received from view {% endcomment %}
+        {{form.username.label}}&nbsp;&nbsp;{{form.username}}
+        <br><br>
+        {{form.password.label}}&nbsp;&nbsp;{{form.password}}
+        <br><br><br>
+        {% comment %} check for error message {% endcomment %}
+        {% if error_message %}
+        {{error_message}}
+        {% endif %}
+        <button type="submit">Login</button>
+      </form>
+    </span>
+  </div>
+  <div class="footer">
+    <span class="text">This App was created by Rebekah Willis. 
+      <a
+        href="https://github.com/rbkh17willis">
+        My Github Here</a>
+    </span>
+  </div>
+</body>
+
+</html>

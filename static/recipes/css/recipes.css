@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+* {
+  background: ghostwhite;
+}
+
+/* NAVIGATION */
+
+.navigation {
+  cursor: pointer;
+  position: fixed;
+  border: none;
+  background: none;
+  top: 20px;
+  margin: 20px 10px;
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.nav-show {
+  background: none;
+  position: relative;
+  margin: 30px 0px;
+  margin-left: -20px;
+}
+
+/* NAVIGATION -- MENU LIST */
+
+ul {
+  background: none;
+  list-style: none;
+}
+
+li {
+  font-size: 20px;
+  font-variant: all-small-caps;
+  text-align: center;
+  border: solid 1px rgb(126, 151, 152);
+  border-radius: 40px;
+  padding: 10px;
+  width: 150px;
+  margin-bottom: 10px;
+  transition: all 0.7s;
+}
+
+ul a {
+  color: rgb(126, 151, 152);
+  text-decoration: none;
+  transition: all 0.7s;
+}
+
+li:hover, ul a:hover, li:hover a {
+  background: rgb(126, 151, 152);
+  color: ghostwhite;
+  letter-spacing: 3px;
+  font-style: italic;
+  transition: all 0.7s;
+}
+
+/* PAGE HEADER */
+
+h1 {
+  padding-top: 20px;
+  background: inherit;
+  font-family: "Homemade Apple", cursive;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#message {
+  margin-bottom: -31px;
+}
+
+#message button {
+  border: none;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-variant: all-small-caps;
+  transition: all 0.5s;
+}
+
+#message button:hover {
+  font-style: italic;
+  letter-spacing: 3px;
+  border: none;
+  border-radius: 20px;
+}
+
+/* RECIPE LIST PAGE */
+
+.recipe_list {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+/* RECIPE DETAIL PAGE */
+
+.recipe_detail {
+  top: 15%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.goBack {
+  position: relative;
+  top: -10px;
+  margin-left: -100%;
+  cursor: pointer;
+  font-size: 40px;
+  color: black;
+  background: none;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.goBack:hover {
+  border: none;
+  color: rgb(126, 151, 152);
+}
+
+/* STYLING FOR EACH RECIPE CARD */
+
+.recipe_cards {
+  background: rgba(214, 219, 223, 0.3);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px 50px;
+  min-width: 600px;
+  margin-bottom: 20px;
+}
+
+#recipe_card {
+  background: rgba(214, 219, 223, 0.3);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px 50px;
+  min-width: 50%;
+  margin-bottom: 20px;
+}
+
+.image_mask {
+  overflow: hidden; 
+  width: 350px; 
+  height: 250px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 20px;
+}
+
+.helper {
+  display: inline-block;
+  min-width: 350px;
+  max-width: 100%;
+  min-height: 250px;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.recipe_cards {
+  background: rgba(214, 219, 223, 0.3);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 20px 50px;
+  min-width: 600px;
+  margin-bottom: 20px;
+}
+
+.update_detail, .delete_detail {
+  background: none;
+  position: relative;
+  text-align: center;
+  top: 50px;
+  width: 100%;
+}
+.update_card, .delete_card {
+  background: rgb(214, 219, 223);
+  border-radius: 10px;
+  display: inline-block;
+  padding: 50px 50px 30px 50px;
+  z-index: 1;
+}
+
+.update_card form,  .update_card span, .update_card input#id_pic, .update_card a {
+  font-variant: all-small-caps;
+  font-style: italic;
+  background: none;
+  border: none;
+}
+
+.update_card tr, .delete_detail form {
+  background: rgb(214, 219, 223);
+}
+
+.recipe_detail, .update_detail, .delete_detail {
+  margin-top: 50px;
+}
+
+.delete_card {
+  border: 1px solid red;
+}
+
+/* UPDATE & DELETE FORM STYLES */
+
+form input, form textarea {
+  min-width: 200px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+form button, h1 button {
+  font-variant: all-small-caps;
+  border: none;
+  background: ghostwhite;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 50%;
+  min-width: 200px;
+  padding: 10px;
+  transition: all 0.7s;
+}
+
+button {
+  max-width: 200px;
+}
+
+form button:hover, h1 button:hover {
+  background: black;
+  color: white;
+  transition: all 0.7s;
+}
+
+.danger:hover {
+  background: red;
+  font-style: italic;
+}
+
+/* RECIPE DETAIL CARD INFO STYLING */
+
+.recipe_name, 
+.recipe_name a, 
+.recipe_time,
+.recipe_info {
+  font-variant: all-small-caps;
+  letter-spacing: 2px;
+  transition: all 0.7s;
+}
+
+.recipe_name,
+.recipe_name a {
+  text-decoration: none;
+  background: none;
+  color: black;
+  font-size: 30px;
+  transition: all 0.7s;
+}
+
+.recipe_name a:hover {
+  letter-spacing: 4px;
+  color: rgb(126, 151, 152);
+  transition: all 0.7s;
+}
+
+.recipe_time {
+  background: none;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.recipe_info, th, td {
+  margin-top: -7%;
+  background: rgba(214, 219, 223, 0.3);
+  font-size: 20px;
+}
+
+/* FOOTER FOR LIST AND DETAIL PAGES */
+
+.footer {
+  position: fixed;
+  bottom: 5px;
+}
+
+.footer a {
+  font-style: italic;
+  text-decoration: none;
+  color: rgb(126, 151, 152);
+  transition: all 0.5s;
+}
+
+.footer a:hover {
+  color: black;
+  letter-spacing: 2px;
+}

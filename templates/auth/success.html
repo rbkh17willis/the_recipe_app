@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HOME PAGE FOR RECIPE APP -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/home.css' %}">
+  <title>Logged Out</title>
+</head>
+
+<body>
+  <div class="model">
+    <span class="text">
+
+      <body>
+        <h1> successfully logged out! </h1>
+        <a style="background: ghostwhite;" href="{% url 'login' %}"><button> Want to log back in? </button></a>
+      </body>
+    </span>
+  </div>
+  <div class="footer">
+    <span class="text">This App was created by Rebekah Willis. 
+      <a
+        href="https://github.com/rbkh17willis">
+        My Github Here</a>
+    </span>
+  </div>
+</body>
+
+</html>

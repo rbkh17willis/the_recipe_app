@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+* {
+  background: ghostwhite;
+}
+
+/* NAVIGATION */
+
+.navigation {
+  cursor: pointer;
+  position: fixed;
+  border: none;
+  background: none;
+  top: 20px;
+  margin: 20px 10px;
+  z-index: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.nav-show {
+  background: none;
+  position: relative;
+  margin: 30px 0px;
+  margin-left: -20px;
+}
+
+/* NAVIGATION -- MENU LIST */
+
+ul {
+  background: none;
+  list-style: none;
+}
+
+li {
+  font-size: 20px;
+  font-variant: all-small-caps;
+  text-align: center;
+  border: solid 1px rgb(126, 151, 152);
+  border-radius: 40px;
+  padding: 10px;
+  width: 150px;
+  margin-bottom: 10px;
+  transition: all 0.7s;
+}
+
+ul a {
+  color: rgb(126, 151, 152);
+  text-decoration: none;
+  transition: all 0.7s;
+}
+
+li:hover, ul a:hover, li:hover a {
+  background: rgb(126, 151, 152);
+  color: ghostwhite;
+  letter-spacing: 3px;
+  font-style: italic;
+  transition: all 0.7s;
+}
+
+/* PAGE HEADER */
+
+h1 {
+  padding-top: 20px;
+  background: inherit;
+  font-family: "Homemade Apple", cursive;
+  text-align: center;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h3 {
+  background: none;
+  font-variant: all-small-caps;
+  letter-spacing: 1px;
+}
+
+form {
+  font-variant: all-small-caps;
+  font-style: italic;
+  letter-spacing: 2px;
+  padding: 10px;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+}
+
+form input, form textarea {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 300px;
+  padding: 5px 10px;
+  background: ghostwhite;
+  text-align: center;
+}
+
+form select {
+  font-variant: all-small-caps;
+  text-align: center;
+  width: 320px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px dotted black;
+}
+
+form button, .about_info button {
+  font-variant: all-small-caps;
+  border: none;
+  background: ghostwhite;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 50%;
+  min-width: 200px;
+  padding: 10px;
+  transition: all 0.7s;
+}
+
+form button:hover, .about_info button:hover {
+  background: black;
+  color: white;
+  transition: all 0.7s;
+}
+.add_card input#id_pic {
+  font-variant: all-small-caps;
+  font-style: italic;
+  background: none;
+  border: none;
+}
+
+.add_card form textarea {
+  min-width: 95%;
+}
+
+.search_card, .add_card {
+  background: rgba(214, 219, 223, 0.302);
+  border-radius: 10px;
+  padding: 20px 50px;
+  max-width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add_card {
+  padding: 20px 50px 20px 30px;
+}
+
+.add_card form input {
+  width: 300px;
+  padding: 5px 10px;
+}
+
+.recipe_info, th, td {
+  font-variant: all-small-caps;
+  letter-spacing: 2px;
+  margin-top: 0px;
+  background: rgba(214, 219, 223, 0.3);
+  border: none;
+  font-size: 20px;
+}
+
+.recipe_info a {
+  text-decoration: none;
+  background: none;
+  color: black;
+  transition: all 0.7s;
+}
+
+.recipe_info a:hover {
+  letter-spacing: 3px;
+  color: rgb(126, 151, 152);
+  transition: all 0.7s;
+}
+
+table {
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding: 10px 10px;
+}
+
+th {
+  padding-bottom: 7px;
+  border-bottom: 1px dotted black;
+}
+
+.add_card th, .add_card td {
+  margin-top: -7%;
+  background: rgba(214, 219, 223, 0.3);
+  border: none;
+  font-size: 20px;
+  min-width: 150px;
+}
+
+.about_card {
+  font-variant: all-small-caps;
+  letter-spacing: 2px;
+  padding: 5px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background: none;
+}
+.about_table, .about_card td, .about_card th {
+  width: 50%;
+  font-style: italic;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  text-align: center;
+  background: none;
+}
+.about_card th {
+  padding: 0px 30px;
+}
+.about_card td, .about_card td a {
+  padding: 0px;
+  font-size: 17px;
+  border: none;
+  transition: all 0.5s;
+}
+.about_card td a:hover{
+  color: white;
+  background: black;
+  border-radius: 20px;
+  letter-spacing: 3px;
+  padding: 0px 30px;
+}
+.about_info {
+  background: rgba(214, 219, 223, 0.3);
+  font-variant: normal;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* FOOTER FOR SEARCH PAGE */
+
+.footer {
+  position: fixed;
+  bottom: 5px;
+}
+
+.footer a {
+  font-style: italic;
+  text-decoration: none;
+  color: rgb(126, 151, 152);
+  transition: all 0.5s;
+}
+
+.footer a:hover {
+  color: black;
+  letter-spacing: 2px;
+}
